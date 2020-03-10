@@ -162,8 +162,8 @@ async function linkModule(moduleName) {
     await writeFile(path.join(moduleDir, 'package.json'), JSON.stringify(packageJsonObj, null, 2));
     type = 'proxy';
   } else {
-    console.log(process.cwd(), target)
-    const stat = fs.lstatSync(target);
+    console.log(path.join(process.cwd(), target))
+    const stat = fs.lstatSync(path.join(process.cwd(), target));
     if(!stat.isDirectory()) {
       console.log(`Target ${target} is not a directory, skipping ...`);
       type = 'none';
