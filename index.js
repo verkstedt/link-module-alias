@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const packageJson = require('../../package.json');
+const packageJson = require('./package.json');
 
 const moduleAliases = packageJson._moduleAliases;
 if(!moduleAliases) {
