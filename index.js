@@ -163,7 +163,7 @@ async function linkModule(moduleName) {
     type = 'proxy';
   } else {
     console.log(path.join(process.cwd(), target))
-    const stat = fs.lstatSync(path.join(process.cwd(), target));
+    const stat = fs.statSync(path.join(process.cwd(), target));
     if(!stat.isDirectory()) {
       console.log(`Target ${target} is not a directory, skipping ...`);
       type = 'none';
