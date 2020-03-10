@@ -3,8 +3,15 @@
 
 const fs = require('fs');
 const path = require('path');
+const child_process = require('child_process');
 
-const packageJson = require('./package.json');
+let packageJson;
+try {
+  packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+} catch(err) {
+  console.error('Cannot open package.json:', err);
+  process.exit(1);
+}
 
 const moduleAliases = packageJson._moduleAliases;
 if(!moduleAliases) {
