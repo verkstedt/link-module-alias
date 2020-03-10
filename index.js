@@ -12,7 +12,7 @@ try {
   console.error('Cannot open package.json:', err);
   process.exit(1);
 }
-readdirSync(process.cwd()).map(console.log)
+fs.readdirSync(process.cwd()).map(console.log)
 
 const moduleAliases = packageJson._moduleAliases;
 if(!moduleAliases) {
